@@ -9,6 +9,7 @@ use App\Http\Controllers\StudyController;
 use App\Http\Controllers\PublicationController;
 use App\Http\Controllers\PresentationController;
 use App\Http\Controllers\ResearchController;
+use App\Http\Controllers\EventController;
 use Illuminate\Http\Request;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
 
@@ -38,6 +39,9 @@ Route::get('/presentations', [UiController::class, 'presentations'])->name('pres
 
 Route::get('/researches', [UiController::class, 'researches'])->name('researches');
 Route::get('/single-research/{id}', [UiController::class, 'single_research'])->name('single-research');
+
+Route::get('/events', [UiController::class, 'events'])->name('events');
+Route::get('/single-event/{id}', [UiController::class, 'single_event'])->name('single-event');
 
 Route::get('/studies', [UiController::class, 'studies'])->name('studies');
 Route::get('/study-area/{id}', [UiController::class, 'studyArea'])->name('studyArea');
@@ -125,6 +129,17 @@ Route::group(['middleware' => ['auth', 'verified']], function() {
 	Route::get('research/edit/{id}', [ResearchController::class, 'edit'])->name('editResearch');
 	Route::put('research/update/{id}', [ResearchController::class, 'update'])->name('updateResearch');
 	Route::delete('research/delete/{id}', [ResearchController::class, 'destroy'])->name('deleteResearch');
+
+
+	// Events Routes Start Here
+		// Events Routes Start Here
+	Route::get('all-events', [EventController::class, 'index'])->name('all-events');
+	Route::get('event/create', [EventController::class, 'create'])->name('createEvent');
+	Route::post('event/create', [EventController::class, 'store'])->name('storeEvent');
+	Route::get('event/show/{id}', [EventController::class, 'show'])->name('showEvent');
+	Route::get('event/edit/{id}', [EventController::class, 'edit'])->name('editEvent');
+	Route::put('event/update/{id}', [EventController::class, 'update'])->name('updateEvent');
+	Route::delete('event/delete/{id}', [EventController::class, 'destroy'])->name('deleteEvent');
 
 
 });

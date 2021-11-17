@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Gallery;
 use App\Models\StudyAreas;
+use Illuminate\Support\Facades\File;
 use DB;
 use Session;
 

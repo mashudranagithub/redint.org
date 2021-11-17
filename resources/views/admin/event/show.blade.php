@@ -10,7 +10,7 @@
     <small>Control panel</small>
   </h1>
   <ol class="breadcrumb">
-    <li><a href="{{ route('home') }}"><i class="fa fa-dashboard"></i> Home</a></li>
+    <li><a href="{{ route('dashboard') }}"><i class="fa fa-dashboard"></i> Dashboard</a></li>
     <li class="active">Show Event</li>
   </ol>
 </section>

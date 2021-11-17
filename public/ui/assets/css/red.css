@@ -102,8 +102,18 @@ a.btn.btn-red.know-more:hover {
     color: #a50000;
 }
 
+a.btn.btn-red:hover {
+    background: #a50000;
+    color: #fff;
+}
+
+a.btn.btn-red:hover svg.svg-inline--fa {
+    color: #fff;
+}
+
+
 body::-webkit-scrollbar {
-  width: 12px;
+  width: 10px;
 }
  
 body::-webkit-scrollbar-track {
@@ -913,6 +923,7 @@ section#News-events {
     
 .single-news-event {
     margin-bottom: 30px;
+    position: relative;
 }
 
 .news-event-image {
@@ -938,18 +949,18 @@ section#News-events {
 
 .news-event-info .event-date span {
     display: block;
-    font-size: 40px;
+    font-size: 20px;
     font-weight: 700;
     color: #fff;
 }
 
 .news-event-info .event-date {
-    width: 20%;
+    width: 30%;
     text-align: center;
 }
 
 .news-event-info .event-info {
-    width: 80%;
+    width: 70%;
     text-align: left;
     padding-left: 12px;
     border-left: 1px solid #b7b7b7;
@@ -957,6 +968,33 @@ section#News-events {
 
 .news-event-info .event-info h3 a {
     color: #fff;
+}
+
+.single-news-event h3,
+.events-page .single-news-event h4 {
+    background: #01522b94;
+    position: absolute;
+    width: 100%;
+    bottom: 80px;
+}
+
+
+/*.events-page .single-news-event h4 {
+    bottom: 80px;
+}*/
+
+.single-news-event h3 a,
+.events-page .single-news-event h4 a {
+    color: #fff;
+    display: block;
+    font-size: 1.2rem;
+    letter-spacing: 0.1rem;
+    padding: 20px;
+}
+
+.single-news-event h3:hover,
+.events-page .single-news-event h4:hover{
+    background: #a50000;
 }
 
 /*.news-event-info:hover .event-info h3 a {

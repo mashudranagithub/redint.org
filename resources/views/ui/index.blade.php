@@ -41,7 +41,7 @@
 					<h2>Studies</h2>
 					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. At iusto eveniet nam reiciendis nesciunt ab exercitationem ...</p>
 
-					<a href="{{ route('studies') }}" class="btn btn-red">Learn More
+					<a href="{{ route('studies') }}" class="btn btn-red">Know More
 						<i class="fas fa-angle-double-right"></i>
 					</a>
 				</div>
@@ -51,7 +51,7 @@
 					<i class="fas fa-newspaper"></i>
 					<h2>Publications</h2>
 					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. At iusto eveniet nam reiciendis nesciunt ab exercitationem ...</p>
-					<a href="{{ route('publications') }}" class="btn btn-red">Learn More
+					<a href="{{ route('publications') }}" class="btn btn-red">Know More
 						<i class="fas fa-angle-double-right"></i>
 					</a>
 				</div>				
@@ -61,7 +61,7 @@
 					<i class="fas fa-file-powerpoint"></i>
 					<h2>Presentations</h2>
 					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. At iusto eveniet nam reiciendis nesciunt ab exercitationem ...</p>
-					<a href="{{ route('presentations') }}" class="btn btn-red">Learn More
+					<a href="{{ route('presentations') }}" class="btn btn-red">Know More
 						<i class="fas fa-angle-double-right"></i>
 					</a>
 				</div>				
@@ -171,92 +171,36 @@
 			<div class="row">
 				<div class="col-md-12">
 					<div class="owl-carousel news-events-slider">
-						<!-- Single news event start here -->
+
+						@foreach($events as $event)
 						<div class="single-news-event">
 							<div class="news-event-image">
-								<a href="#">
-									<img src="{{ asset('ui/assets/img/news&events/news&events.jpg') }}" alt="News & Events Image">
+								<a href="{{ route('single-event', $event->id) }}">
+									<img src="{{ asset('ui/assets/images/event/'.$event->event_image) }}" alt="News & Events Image">
 								</a>
 							</div>
 							<div class="news-event-info d-flex">
 								<div class="event-date">
-									<span>15</span>August
+									<span>{{$event->event_date}}</span>
 								</div>
 								<div class="event-info">
 									<div class="time-place">
-										<p class="event-time">9.30 AM - 5.00 PM</p>
-										<p class="event-place">Brac James P Grant School of Public Health</p>
+										<p class="event-time">{{$event->event_start_time}} - {{$event->event_end_time}}</p>
+										<p class="event-place">{{$event->event_place}}</p>
 									</div>
-									<h3><a href="#">Event Name</a></h3>
 								</div>
 							</div>
-						</div><!-- Single news event end here -->
-						<!-- Single news event start here -->
-						<div class="single-news-event">
-							<div class="news-event-image">
-								<a href="#">
-									<img src="{{ asset('ui/assets/img/news&events/news&events.jpg') }}" alt="News & Events Image">
-								</a>
-							</div>
-							<div class="news-event-info d-flex">
-								<div class="event-date">
-									<span>15</span>August
-								</div>
-								<div class="event-info">
-									<div class="time-place">
-										<p class="event-time">9.30 AM - 5.00 PM</p>
-										<p class="event-place">Brac James P Grant School of Public Health</p>
-									</div>
-									<h3><a href="#">Event Name</a></h3>
-								</div>
-							</div>
-						</div><!-- Single news event end here -->
-						<!-- Single news event start here -->
-						<div class="single-news-event">
-							<div class="news-event-image">
-								<a href="#">
-									<img src="{{ asset('ui/assets/img/news&events/news&events.jpg') }}" alt="News & Events Image">
-								</a>
-							</div>
-							<div class="news-event-info d-flex">
-								<div class="event-date">
-									<span>15</span>August
-								</div>
-								<div class="event-info">
-									<div class="time-place">
-										<p class="event-time">9.30 AM - 5.00 PM</p>
-										<p class="event-place">Brac James P Grant School of Public Health</p>
-									</div>
-									<h3><a href="#">Event Name</a></h3>
-								</div>
-							</div>
-						</div><!-- Single news event end here -->
-						<!-- Single news event start here -->
-						<div class="single-news-event">
-							<div class="news-event-image">
-								<a href="#">
-									<img src="{{ asset('ui/assets/img/news&events/news&events.jpg') }}" alt="News & Events Image">
-								</a>
-							</div>
-							<div class="news-event-info d-flex">
-								<div class="event-date">
-									<span>15</span>August
-								</div>
-								<div class="event-info">
-									<div class="time-place">
-										<p class="event-time">9.30 AM - 5.00 PM</p>
-										<p class="event-place">Brac James P Grant School of Public Health</p>
-									</div>
-									<h3><a href="#">Event Name</a></h3>
-								</div>
-							</div>
-						</div><!-- Single news event end here -->
+
+							<h3><a href="{{ route('single-event', $event->id) }}">{{Str::limit($event->event_title, $limit = 30, $end = ' ...')}}</a></h3>
+						</div>
+						@endforeach
+
 					</div>
 				</div>
 			</div>
 			<div class="row">
 				<div class="col-md-12 text-center">
-					<a href="javascript:void(0);" class="btn btn-red view-all">All News & Events</a>
+					<a href="{{ route('events') }}" class="btn btn-red view-all">All News & Events</a>
 				</div>
 			</div>
 		</div>

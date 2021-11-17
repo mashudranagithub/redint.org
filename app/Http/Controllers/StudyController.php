@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\StudyAreas;
 use App\Models\Study;
+use Illuminate\Support\Facades\File;
 use DB;
 
 class StudyController extends Controller

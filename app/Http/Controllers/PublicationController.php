@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Publication;
+use Illuminate\Support\Facades\File;
 use DB;
 
 class PublicationController extends Controller
