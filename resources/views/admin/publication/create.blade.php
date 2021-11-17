@@ -44,6 +44,10 @@
               <select name="type" id="type" class="form-control" required>
                   <option value="">Select Publication Type</option>
                   <option value="journal">Journal</option>
+                  <option value="book">Book</option>
+                  <option value="report">Report</option>
+                  <option value="monograph">Monograph</option>
+                  <option value="working">Working</option>
                   <option value="abstract">Abstract</option>
                   <option value="newspaper">Newspaper</option>
               </select>

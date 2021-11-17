@@ -36,6 +36,7 @@ Route::get('/vision-mission', [UiController::class, 'visionMission'])->name('vis
 Route::get('/professionals', [UiController::class, 'professionals'])->name('professionals');
 Route::get('/publications', [UiController::class, 'publications'])->name('publications');
 Route::get('/presentations', [UiController::class, 'presentations'])->name('presentations');
+Route::get('/contact', [UiController::class, 'contact'])->name('contact');
 
 Route::get('/researches', [UiController::class, 'researches'])->name('researches');
 Route::get('/single-research/{id}', [UiController::class, 'single_research'])->name('single-research');

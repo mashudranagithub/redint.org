@@ -44,6 +44,10 @@
               <label for="type">Publication Type</label>
               <select name="type" id="type" class="form-control" required>
                   <option @if($publication->type == 'journal') {{'selected'}} @endif value="journal">Journal</option>
+                  <option @if($publication->type == 'book') {{'selected'}} @endif value="book">Book</option>
+                  <option @if($publication->type == 'report') {{'selected'}} @endif value="report">Report</option>
+                  <option @if($publication->type == 'monograph') {{'selected'}} @endif value="monograph">Monograph</option>
+                  <option @if($publication->type == 'working') {{'selected'}} @endif value="working">Working</option>
                   <option @if($publication->type == 'abstract') {{'selected'}} @endif value="abstract">Abstract</option>
                   <option @if($publication->type == 'newspaper') {{'selected'}} @endif value="newspaper">Newspaper</option>
               </select>

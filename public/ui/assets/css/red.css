@@ -103,7 +103,7 @@ a.btn.btn-red.know-more:hover {
 }
 
 a.btn.btn-red:hover {
-    background: #a50000;
+    background: #a50000 !important;
     color: #fff;
 }
 

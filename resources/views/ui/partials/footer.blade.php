@@ -28,7 +28,7 @@
                     </div>
                     <div class="col-md-4">
                         <div class="footer-single-box">
-                            <h3>Our Studies</h3>
+                            <h3>Our Study Areas</h3>
                             <ul class="footer-service-list">
                                 @foreach($footer_s_areas as $f_s_a)
                                 <li><i class="fas fa-angle-right"></i><a href="{{route('studyArea', $f_s_a->id)}}">{{$f_s_a->name}}</a></li>
@@ -44,7 +44,7 @@
                                 <li><i class="fas fa-angle-right"></i><a href="{{route('events')}}">News & Events</a></li>
                                 <li><i class="fas fa-angle-right"></i><a href="{{route('publications')}}">Publications</a></li>
                                 <li><i class="fas fa-angle-right"></i><a href="{{route('presentations')}}">Presentations</a></li>
-                                <li><i class="fas fa-angle-right"></i><a href="#">Contact</a></li>
+                                <li><i class="fas fa-angle-right"></i><a href="{{route('contact')}}">Contact</a></li>
                             </ul>
                         </div>
                     </div>

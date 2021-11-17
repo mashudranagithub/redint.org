@@ -137,7 +137,7 @@
 		                                        <a href="{{ route('gallery') }}">Gallery</a>
 		                                    </li>
 		                                    <li>
-		                                        <a href="#">Contact</a>
+		                                        <a href="{{ route('contact') }}">Contact</a>
 		                                    </li>
 		                                </ul>
 		                            </div>

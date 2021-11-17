@@ -129,9 +129,15 @@ class UiController extends Controller
     public function publications()
     {
         $researches = Research::orderBy('id', 'desc')->take(10)->get();
+
         $journals = Publication::orderBy('id', 'DESC')->where('type', '=', 'journal')->paginate(5);
+        $books = Publication::orderBy('id', 'DESC')->where('type', '=', 'book')->paginate(5);
+        $reports = Publication::orderBy('id', 'DESC')->where('type', '=', 'report')->paginate(5);
+        $monographs = Publication::orderBy('id', 'DESC')->where('type', '=', 'monograph')->paginate(5);
+        $workings = Publication::orderBy('id', 'DESC')->where('type', '=', 'working')->paginate(5);
         $abstracts = Publication::orderBy('id', 'DESC')->where('type', '=', 'abstract')->paginate(5);
         $newspapers = Publication::orderBy('id', 'DESC')->where('type', '=', 'newspaper')->paginate(5);
+
         $footer_s_areas = StudyAreas::orderBy('id', 'desc')->take(5)->get();
         return view('ui.publications', compact(
             'journals',
@@ -205,6 +211,18 @@ class UiController extends Controller
             'researches',
             'event',
             'latest_events',
+            'footer_s_areas'
+        ));
+    }
+
+
+    public function contact()
+    {
+        $researches = Research::orderBy('id', 'DESC')->take(10)->get();
+        $footer_s_areas = StudyAreas::orderBy('id', 'desc')->take(5)->get();
+
+        return view('ui.contact', compact(
+            'researches',
             'footer_s_areas'
         ));
     }
