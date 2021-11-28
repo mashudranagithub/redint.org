@@ -111,6 +111,11 @@ a.btn.btn-red:hover svg.svg-inline--fa {
     color: #fff;
 }
 
+a.btn.know-more {
+    padding: 5px 0;
+    color: #a50000;
+}
+
 
 body::-webkit-scrollbar {
   width: 10px;
@@ -1190,16 +1195,31 @@ section#Page-content h3 {
 }
 
 .member-image {
-    max-width: 25%;
+    width: 35%;
+}
+
+.member-info {
+    width: 65%;
+}
+
+.member-info h4 {
+    margin-bottom: 10px;
+}
+
+p.interest {
+    margin: 8px 0;
+}
+
+p.interest em {
+    font-weight: 700;
 }
 
 .single-article,
 .single-member {
-    margin-bottom: 20px;
-    padding-bottom: 10px;
+    margin-bottom: 30px;
     border-bottom: 1px solid #a50000;
     background: #f6f6f6;
-    padding: 15px 20px;
+    padding: 25px;
 }
 
 .single-article {

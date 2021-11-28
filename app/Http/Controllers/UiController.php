@@ -78,6 +78,28 @@ class UiController extends Controller
     }
 
 
+    public function advisors()
+    {
+        $researches = Research::orderBy('id', 'desc')->take(10)->get();
+        $footer_s_areas = StudyAreas::orderBy('id', 'desc')->take(5)->get();
+        return view('ui.advisors', compact(
+            'researches',
+            'footer_s_areas'
+        ));
+    }
+
+
+    public function management()
+    {
+        $researches = Research::orderBy('id', 'desc')->take(10)->get();
+        $footer_s_areas = StudyAreas::orderBy('id', 'desc')->take(5)->get();
+        return view('ui.management', compact(
+            'researches',
+            'footer_s_areas'
+        ));
+    }
+
+
     public function studies()
     {
         $researches = Research::orderBy('id', 'desc')->take(10)->get();

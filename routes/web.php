@@ -33,7 +33,11 @@ Route::get('/', [UiController::class, 'homepage'])->name('homepage');
 Route::get('/gallery', [UiController::class, 'gallery'])->name('gallery');
 Route::get('/background', [UiController::class, 'background'])->name('background');
 Route::get('/vision-mission', [UiController::class, 'visionMission'])->name('visionMission');
+
 Route::get('/professionals', [UiController::class, 'professionals'])->name('professionals');
+Route::get('/advisors', [UiController::class, 'advisors'])->name('advisors');
+Route::get('/management', [UiController::class, 'management'])->name('management');
+
 Route::get('/publications', [UiController::class, 'publications'])->name('publications');
 Route::get('/presentations', [UiController::class, 'presentations'])->name('presentations');
 Route::get('/contact', [UiController::class, 'contact'])->name('contact');

@@ -86,10 +86,10 @@
 		                                        <ul class="first-dropped-menu">
 		                                            <li><a href="{{ route('background') }}">The organization</a></li>
 		                                            <li><a href="{{ route('visionMission') }}">Vision & Mission</a></li>
-		                                            <!-- <li><a href="{{ route('professionals') }}">Our professionals</a></li> -->
-		                                            <!-- <li><a href="Javascript:void(0);">Panel of advisors and Experts</a></li>
+		                                            <li><a href="{{ route('professionals') }}">Our professionals</a></li>
+		                                            <li><a href="{{ route('advisors') }}">Panel of advisors and Experts</a></li>
 		                                            <li><a href="Javascript:void(0);">Network and Partnership</a></li>
-		                                            <li><a href="Javascript:void(0);">Management</a></li> -->
+		                                            <li><a href="{{ route('management') }}">Management</a></li>
 		                                        </ul>
 		                                    </li>
 
