@@ -10,6 +10,7 @@ use App\Models\Publication;
 use App\Models\Presentation;
 use App\Models\Research;
 use App\Models\Event;
+use App\Models\Member;
 
 use Illuminate\Support\Facades\File;
 use DB;
@@ -71,9 +72,11 @@ class UiController extends Controller
     {
         $researches = Research::orderBy('id', 'desc')->take(10)->get();
         $footer_s_areas = StudyAreas::orderBy('id', 'desc')->take(5)->get();
+        $members = Member::orderBy('position', 'asc')->where('type', 'professionals')->paginate(10);
         return view('ui.professionals', compact(
             'researches',
-            'footer_s_areas'
+            'footer_s_areas',
+            'members'
         ));
     }
 
@@ -82,9 +85,11 @@ class UiController extends Controller
     {
         $researches = Research::orderBy('id', 'desc')->take(10)->get();
         $footer_s_areas = StudyAreas::orderBy('id', 'desc')->take(5)->get();
+        $members = Member::orderBy('position', 'asc')->where('type', 'advisors')->paginate(10);
         return view('ui.advisors', compact(
             'researches',
-            'footer_s_areas'
+            'footer_s_areas',
+            'members'
         ));
     }
 
@@ -93,9 +98,11 @@ class UiController extends Controller
     {
         $researches = Research::orderBy('id', 'desc')->take(10)->get();
         $footer_s_areas = StudyAreas::orderBy('id', 'desc')->take(5)->get();
+        $members = Member::orderBy('position', 'asc')->where('type', 'management')->paginate(10);
         return view('ui.management', compact(
             'researches',
-            'footer_s_areas'
+            'footer_s_areas',
+            'members'
         ));
     }
 

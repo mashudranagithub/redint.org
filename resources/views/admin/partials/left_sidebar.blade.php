@@ -115,23 +115,25 @@
           </ul>
         </li>
 
-
-
-        
-
-        <!-- <li class="treeview">
+        <li class="treeview">
           <a href="javascript:void(0);">
             <i class="fa fa-users text-yellow"></i>
-            <span>Committee Members</span>
+            <span>Members</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
           <ul class="treeview-menu">
-              <li><a class="nav-link" href=""><i class="fa fa-circle-o text-aqua"></i>All Committee Members </a></li>
-              <li><a class="nav-link" href=""><i class="fa fa-circle-o text-aqua"></i>Create New Committee Member </a></li>
+              <li><a class="nav-link" href="{{ route('all-members') }}"><i class="fa fa-circle-o text-aqua"></i>All Members </a></li>
+              <li><a class="nav-link" href="{{ route('create-member') }}"><i class="fa fa-circle-o text-aqua"></i>Create New Member </a></li>
           </ul>
         </li>
+
+
+
+        
+
+        <!-- 
 
         <li class="treeview">
           <a href="javascript:void(0);">

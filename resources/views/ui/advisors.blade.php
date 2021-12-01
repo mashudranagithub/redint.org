@@ -18,47 +18,21 @@
 			<div class="col-md-12">
 				<div class="members-list">
 
+					@foreach($members as $member)
 					<div class="single-member d-flex">
 						<div class="member-image">
-							<a href="javascript:void(0);">
-								<img src="{{ asset('ui/assets/img/publication/water-management.jpg') }}" alt="Publication Image">
-							</a>
+							<img src="{{ asset('ui/assets/images/members/'.$member->type.'/'.$member->photo) }}" alt="Member Image">
 						</div>
 						<div class="member-info">
-							<h4><a href="javascript:void(0)">Member Name - (Member Designation)</a></h4>
-							<p>Lorem ipsum dolor, sit amet, consectetur adipisicing elit. Harum aut quas unde, odio nemo, ea rerum ratione, quidem molestiae aliquid ab minus doloribus cupiditate vero sed placeat, reprehenderit error eveniet soluta. Ex explicabo distinctio at!</p>
-							<p class="interest"><em>Research Interest: </em>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Suscipit, explicabo aperiam aspernatur maiores quam consectetur!</p>
-							<a href="javascript:void(0);" class="btn know-more" target="_blank">Know more</a>
+							<h4><a href="javascript:void(0)">{{$member->name}} - ({{$member->designation}})</a></h4>
+							{!!$member->bio!!}
+							<p class="interest"><em>Research Interest: </em>{{$member->interests}}</p>
+							<p class="email"><em>Email: </em>{{$member->email}}</p>
 						</div>
 					</div>
+					@endforeach
 
-					<div class="single-member d-flex">
-						<div class="member-image">
-							<a href="javascript:void(0);">
-								<img src="{{ asset('ui/assets/img/publication/water-management.jpg') }}" alt="Publication Image">
-							</a>
-						</div>
-						<div class="member-info">
-							<h4><a href="javascript:void(0)">Member Name - (Member Designation)</a></h4>
-							<p>Lorem ipsum dolor, sit amet, consectetur adipisicing elit. Harum aut quas unde, odio nemo, ea rerum ratione, quidem molestiae aliquid ab minus doloribus cupiditate vero sed placeat, reprehenderit error eveniet soluta. Ex explicabo distinctio at!</p>
-							<p class="interest"><em>Research Interest: </em>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Suscipit, explicabo aperiam aspernatur maiores quam consectetur!</p>
-							<a href="javascript:void(0);" class="btn know-more" target="_blank">Know more</a>
-						</div>
-					</div>
-
-					<div class="single-member d-flex">
-						<div class="member-image">
-							<a href="javascript:void(0);">
-								<img src="{{ asset('ui/assets/img/publication/water-management.jpg') }}" alt="Publication Image">
-							</a>
-						</div>
-						<div class="member-info">
-							<h4><a href="javascript:void(0)">Member Name - (Member Designation)</a></h4>
-							<p>Lorem ipsum dolor, sit amet, consectetur adipisicing elit. Harum aut quas unde, odio nemo, ea rerum ratione, quidem molestiae aliquid ab minus doloribus cupiditate vero sed placeat, reprehenderit error eveniet soluta. Ex explicabo distinctio at!</p>
-							<p class="interest"><em>Research Interest: </em>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Suscipit, explicabo aperiam aspernatur maiores quam consectetur!</p>
-							<a href="javascript:void(0);" class="btn know-more" target="_blank">Know more</a>
-						</div>
-					</div>
+					{{ $members->links() }}
 
 				</div>
 			</div>

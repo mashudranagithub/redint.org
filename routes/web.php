@@ -10,6 +10,7 @@ use App\Http\Controllers\PublicationController;
 use App\Http\Controllers\PresentationController;
 use App\Http\Controllers\ResearchController;
 use App\Http\Controllers\EventController;
+use App\Http\Controllers\MemberController;
 use Illuminate\Http\Request;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
 
@@ -137,7 +138,6 @@ Route::group(['middleware' => ['auth', 'verified']], function() {
 
 
 	// Events Routes Start Here
-		// Events Routes Start Here
 	Route::get('all-events', [EventController::class, 'index'])->name('all-events');
 	Route::get('event/create', [EventController::class, 'create'])->name('createEvent');
 	Route::post('event/create', [EventController::class, 'store'])->name('storeEvent');
@@ -145,6 +145,16 @@ Route::group(['middleware' => ['auth', 'verified']], function() {
 	Route::get('event/edit/{id}', [EventController::class, 'edit'])->name('editEvent');
 	Route::put('event/update/{id}', [EventController::class, 'update'])->name('updateEvent');
 	Route::delete('event/delete/{id}', [EventController::class, 'destroy'])->name('deleteEvent');
+
+
+	// Events Routes Start Here
+	Route::get('all-members', [MemberController::class, 'index'])->name('all-members');
+	Route::get('member/create', [MemberController::class, 'create'])->name('create-member');
+	Route::post('member/create', [MemberController::class, 'store'])->name('store-member');
+	Route::get('member/show/{id}', [MemberController::class, 'show'])->name('show-member');
+	Route::get('member/edit/{id}', [MemberController::class, 'edit'])->name('edit-member');
+	Route::put('member/update/{id}', [MemberController::class, 'update'])->name('update-member');
+	Route::delete('member/delete/{id}', [MemberController::class, 'destroy'])->name('delete-member');
 
 
 });

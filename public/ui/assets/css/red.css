@@ -1210,7 +1210,8 @@ p.interest {
     margin: 8px 0;
 }
 
-p.interest em {
+p.interest em,
+p.email em {
     font-weight: 700;
 }
 
@@ -1385,36 +1386,12 @@ section#Page-banner img {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /**************** Responsive CSS Styles ****************/
 
 @media (min-width: 1367px){
 
-
     .container {
         max-width: 80%;
-    }
-
-    .header-main{
-        top: 94px;
     }
 
     .main-slider .owl-nav {
