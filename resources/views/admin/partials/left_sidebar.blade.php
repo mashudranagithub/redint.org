@@ -18,8 +18,8 @@
                 <a href="{{ url('/dashboard') }}">
                     <i class="fa fa-dashboard"></i> <span>Dashboard</span>
                 </a>
-            </li>
-            <li><a class="nav-link" href="{{ route('register') }}"><i class="fa fa-circle-o text-aqua"></i>Create New User </a></li>
+            </li>           
+            <li><a class="nav-link" href="{{ route('settings') }}"><i class="fa fa-cog text-aqua"></i>Settings</a></li>
             <li class="treeview">
                 <a href="javascript:void(0);">
                     <i class="fa fa-map text-red"></i>
@@ -141,21 +141,7 @@
                     <li><a class="nav-link" href="{{ route('create-post') }}"><i class="fa fa-circle-o text-aqua"></i>Create New Partner</a></li>
                 </ul>
             </li>
-            <li class="treeview">
-                <a href="javascript:void(0);">
-                    <i class="fa fa-cog text-yellow"></i>
-                    <span>Settings</span>
-                    <span class="pull-right-container">
-                        <i class="fa fa-angle-left pull-right"></i>
-                    </span>
-                </a>
-                <ul class="treeview-menu">
-                    <li><a href="{{ route('settings') }}">
-                    <i class="fa fa-cog text-red"></i>
-                    <span>Edit Settings</span>
-                </a></li>
-                </ul>
-            </li>
+            <li><a class="nav-link" href="{{ route('register') }}"><i class="fa fa-circle-o text-aqua"></i>Create New User </a></li>
         </ul>
     </section>
     <!-- /.sidebar -->

@@ -91,8 +91,6 @@ Route::post('/email/verification-notification', function (Request $request) {
 Route::group(['middleware' => ['auth', 'verified']], function() {
 	Route::get('/dashboard', [AdminController::class, 'index'])->name('dashboard');
 
-
-
 	// Photo Routes Start Here
 	Route::get('all-photos', [GalleryController::class, 'index'])->name('allPhotos');
 	Route::get('photo/create', [GalleryController::class, 'create'])->name('createPhoto');

@@ -3,6 +3,17 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Gallery;
+use App\Models\StudyAreas;
+use App\Models\Study;
+use App\Models\Publication;
+use App\Models\Presentation;
+use App\Models\Research;
+use App\Models\Event;
+use App\Models\Member;
+use App\Models\Post;
+use App\Models\Partner;
+use App\Models\Settings;
 
 class AdminController extends Controller
 {
@@ -19,7 +30,21 @@ class AdminController extends Controller
      */
     public function index()
     {
-        return view('admin.index');
+        $total_research = Research::orderBy('id', 'desc')->count();
+        $total_publication = Publication::orderBy('id', 'DESC')->count();
+        $total_events = Event::orderBy('id', 'DESC')->count();
+        $total_partners = Partner::orderBy('id', 'desc')->count();
+        $total_study_areas = StudyAreas::orderBy('id', 'desc')->count();
+        $total_gallery_image = Gallery::orderBy('id', 'desc')->count();
+
+        return view('admin.index', compact(
+            'total_research',
+            'total_publication',
+            'total_events',
+            'total_partners',
+            'total_study_areas',
+            'total_gallery_image',
+        ));
     }
 
     /**

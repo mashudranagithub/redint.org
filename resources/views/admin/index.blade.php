@@ -18,85 +18,92 @@
     <section class="content">
       <!-- Small boxes (Stat box) -->
       <div class="row">
-        <div class="col-lg-3 col-xs-6">
+        <div class="col-lg-6 col-xs-6">
           <!-- small box -->
           <div class="small-box bg-aqua">
             <div class="inner">
-              <h3></h3>
-
-              <p>Group Members</p>
+              <h3>{{$total_research}}</h3>
+              <p>Researches</p>
             </div>
             <div class="icon">
               <i class="fa fa-users"></i>
             </div>
-            <a href="" class="small-box-footer">Show All <i class="fa fa-arrow-circle-right"></i></a>
+            <a href="{{route('all-research')}}" class="small-box-footer">All Researches<i class="fa fa-arrow-circle-right"></i></a>
           </div>
         </div>
         <!-- ./col -->
-        <div class="col-lg-3 col-xs-6">
+        <div class="col-lg-6 col-xs-6">
           <!-- small box -->
           <div class="small-box bg-green">
             <div class="inner">
-              <h3></h3>
-
-              <p>Regions</p>
+              <h3>{{$total_publication}}</h3>
+              <p>Publications</p>
             </div>
             <div class="icon">
               <i class="fa fa-map"></i>
             </div>
-            <a href="" class="small-box-footer">Regions info <i class="fa fa-arrow-circle-right"></i></a>
+            <a href="{{route('all-publications')}}" class="small-box-footer">Publications info <i class="fa fa-arrow-circle-right"></i></a>
           </div>
         </div>
         <!-- ./col -->
-        <div class="col-lg-3 col-xs-6">
+        <div class="col-lg-6 col-xs-6">
           <!-- small box -->
-          <div class="small-box bg-yellow">
+          <div class="small-box bg-green">
             <div class="inner">
-              <h3></h3>
-
-              <p>Committee Members</p>
+              <h3>{{$total_events}}</h3>
+              <p>Events</p>
             </div>
             <div class="icon">
-              <i class="fa fa-users"></i>
+              <i class="fa fa-map"></i>
             </div>
-            <a href="" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+            <a href="{{route('all-events')}}" class="small-box-footer">Events info <i class="fa fa-arrow-circle-right"></i></a>
           </div>
         </div>
         <!-- ./col -->
-        <div class="col-lg-3 col-xs-6">
+        <div class="col-lg-6 col-xs-6">
           <!-- small box -->
-          <div class="small-box bg-red">
+          <div class="small-box bg-aqua">
             <div class="inner">
-              <h3></h3>
-
-              <p>Selected Institutions</p>
+              <h3>{{$total_partners}}</h3>
+              <p>Partners</p>
             </div>
             <div class="icon">
-              <i class="fa fa-sitemap"></i>
+              <i class="fa fa-map"></i>
             </div>
-            <a href="" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+            <a href="{{route('all-partners')}}" class="small-box-footer">Partners info <i class="fa fa-arrow-circle-right"></i></a>
           </div>
         </div>
         <!-- ./col -->
+        <div class="col-lg-6 col-xs-6">
+          <!-- small box -->
+          <div class="small-box bg-aqua">
+            <div class="inner">
+              <h3>{{$total_study_areas}}</h3>
+              <p>Study Areas</p>
+            </div>
+            <div class="icon">
+              <i class="fa fa-map"></i>
+            </div>
+            <a href="{{route('all-study-area')}}" class="small-box-footer">Study Areas info <i class="fa fa-arrow-circle-right"></i></a>
+          </div>
+        </div>
+        <!-- ./col -->
+        <div class="col-lg-6 col-xs-6">
+          <!-- small box -->
+          <div class="small-box bg-green">
+            <div class="inner">
+              <h3>{{$total_gallery_image}}</h3>
+              <p>Images of Gallery</p>
+            </div>
+            <div class="icon">
+              <i class="fa fa-map"></i>
+            </div>
+            <a href="{{route('allPhotos')}}" class="small-box-footer">Gallery info <i class="fa fa-arrow-circle-right"></i></a>
+          </div>
+        </div>
+
       </div>
       <!-- /.row -->
-      <!-- Main row -->
-      <div class="row">
-        <!-- Left col -->
-        <section class="col-lg-7 connectedSortable">
-
-
-        </section>
-        <!-- /.Left col -->
-        <!-- right col (We are only adding the ID to make the widgets sortable)-->
-        <section class="col-lg-5 connectedSortable">
-
-
-
-        </section>
-        <!-- right col -->
-      </div>
-      <!-- /.row (main row) -->
 
     </section>
     <!-- /.content -->

@@ -584,7 +584,7 @@ section#Etra {
 .etra-backgrounds .etra-part.research::after,
 .etra-backgrounds .etra-part.advocacy::after {
     transition: all 1s;
-    background: rgba(0, 0, 0, 1);
+    background: rgb(8 137 73);
 }
 
 /*.etra-backgrounds .etra-part.education.scrolled::after {
