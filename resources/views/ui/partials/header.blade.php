@@ -88,7 +88,7 @@
 		                                            <li><a href="{{ route('visionMission') }}">Vision & Mission</a></li>
 		                                            <li><a href="{{ route('professionals') }}">Our professionals</a></li>
 		                                            <li><a href="{{ route('advisors') }}">Panel of advisors and Experts</a></li>
-		                                            <li><a href="Javascript:void(0);">Network and Partnership</a></li>
+		                                            <li><a href="{{ route('networkPartners') }}">Network and Partnership</a></li>
 		                                            <li><a href="{{ route('management') }}">Management</a></li>
 		                                        </ul>
 		                                    </li>
@@ -104,35 +104,32 @@
 															@endforeach
 		                                                </ul>
 		                                            </li>
-		                                            <!-- <li><a href="#">Consultancy</a></li> -->
-<!-- 		                                            <li class="second-drop-menu">
+		                                            <li><a href="{{ route('consultancy') }}">Consultancy</a></li>
+		                                            <li class="second-drop-menu">
 		                                                <a href="#">Policy advocacy</a>
 		                                                <ul class="second-dropped-menu">
 		                                                    <li><a href="{{ route('presentations') }}">Presentations</a></li>
-		                                                    <li><a href="#">Workshop/Seminar</a></li>
+		                                                    <li><a href="{{ route('workshops') }}">Workshop/Seminar</a></li>
 		                                                </ul>
-		                                            </li> -->
-		                                            <li><a href="{{ route('presentations') }}">Presentations</a></li>
-		                                            <!-- <li><a href="#">Social and Professional services</a></li> -->
+		                                            </li>
+		                                            <li><a href="{{ route('social') }}">Social and Professional services</a></li>
 		                                            <li><a href="{{ route('studies') }}">Studies</a></li>
 		                                        </ul>
 		                                    </li>
-		                                    
 		                                    <li><a href="{{ route('studies') }}">Studies</a></li>
-		                                    
 		                                    <li class="first-drop-menu">
 		                                        <a href="#">Resources</a>
 		                                        <ul class="first-dropped-menu">
 		                                            <li><a href="{{ route('publications') }}">All Publications</a></li>
-		                                            <!-- <li><a href="Javascript:void(0);">Technical Notes</a></li> -->
+		                                            <li><a href="{{ route('technical') }}">Technical Notes</a></li>
 		                                        </ul>
 		                                    </li>
 		                                    <li>
 		                                        <a href="{{ route('events') }}">News & Events</a>
 		                                    </li>
-		                                    <!-- <li>
-		                                        <a href="#">Awards</a>
-		                                    </li> -->
+		                                    <li>
+		                                        <a href="{{ route('awards') }}">Awards</a>
+		                                    </li>
 		                                    <li>
 		                                        <a href="{{ route('gallery') }}">Gallery</a>
 		                                    </li>

@@ -37,7 +37,7 @@
 			<form role="form" action="{{ route('storeEvent') }}" method="post" enctype="multipart/form-data">
         {{ csrf_field() }}
         <div class="box-body">
-        	<h2>Event Create Form</h2>
+        	<h2>Event/ Workshop/ Seminar/ Awards Create Form</h2>
         	<hr>
           <div class="form-group">
             <label for="event-image">Event Image</label>
@@ -65,12 +65,12 @@
             <input name="event_place" type="text" class="form-control" id="event_place" placeholder="Ex: James P Grant School of Publich Health" required>
           </div>
           <div class="form-group">
-            <label for="event_status">Event Status</label>
+            <label for="event_status">Event Type</label>
             <select name="event_status" id="event_status" class="form-control" required>
-              <option value="">Select Event Status</option>
-              <option value="upcoming">Upcoming</option>
-              <option value="running">Running</option>
-              <option value="previous">Previous</option>
+              <option value="">Select Event Type</option>
+              <option value="upcoming">News & Events</option>
+              <option value="running">Workshop/Seminar</option>
+              <option value="previous">Awards</option>
             </select>
           </div>
           <div class="form-group">

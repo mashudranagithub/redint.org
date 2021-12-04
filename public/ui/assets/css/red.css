@@ -695,6 +695,15 @@ section#About .section-heading h2::after {
     margin-top: 35px;
 }
 
+.red-text-image img {
+    float: right;
+    padding: 0 30px 30px;
+}
+
+.red-text-image p {
+    text-align: justify;
+}
+
 /*****************************
     About Section End Here
 ******************************/
@@ -1040,6 +1049,17 @@ section#Partners {
 .partners-slider .single-partner {
     border: 1px solid #ddd;
 }
+
+.single-partner {
+    margin-bottom: 30px;
+    border: 1px solid #ddd;
+    height: 150px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    padding: 15px;
+}
+
 
 /*************************************************
         Partners section end here

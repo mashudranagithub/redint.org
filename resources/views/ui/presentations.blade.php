@@ -7,10 +7,17 @@
 		<div class="row">
 			<div class="col-md-12">
 				<div class="section-heading">
-					<h3>Presentations</h3>
+					<h3>@if(isset($presentation_post[0])) {{$presentation_post[0]->title}} @else Presentations @endif </h3>
 				</div>
 			</div>
 		</div>
+		@if(isset($presentation_post[0]))
+		<div class="row mb-4">
+			<div class="col-md-12 mb-4">
+				{!!$presentation_post[0]->detail!!}
+			</div>
+		</div>
+		@endif
 		<div class="row">
 			<div class="col-md-12">
 				@foreach($presentations as $presentation)

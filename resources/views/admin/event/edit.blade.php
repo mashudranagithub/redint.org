@@ -71,10 +71,9 @@
           <div class="form-group">
             <label for="event_status">Event Status</label>
             <select name="event_status" id="event_status" class="form-control" required>
-              <option value="{{ $event->event_status }}">{{ $event->event_status }}</option>
-              <option value="upcoming">Upcoming</option>
-              <option value="running">Running</option>
-              <option value="previous">Previous</option>
+              <option @if($event->event_status == 'upcoming') selected @endif value="upcoming">News & Events</option>
+              <option @if($event->event_status == 'running') selected @endif value="running">Workshop/Seminar</option>
+              <option @if($event->event_status == 'previous') selected @endif value="previous">Awards</option>
             </select>
           </div>
           <div class="form-group">

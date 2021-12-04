@@ -11,15 +11,17 @@
 		<div class="row">
 			<div class="col-md-12">
 				<div class="page-heading">
-					<h3>Studies</h3>
+					<h3>@if(isset($study_post[0])) {{$study_post[0]->title}} @else Studies @endif</h3>
 				</div>
 			</div>
 		</div>
+		@if(isset($study_post[0])) 
 		<div class="row">
 			<div class="col-md-12">
-				<p>Lorem ipsum dolor sit amet, consectetur, adipisicing elit. Praesentium magnam necessitatibus, dolor. Odio, doloremque corrupti ratione perferendis illum quis cupiditate blanditiis rem, recusandae cum tenetur unde. Perferendis cum, illo est repellendus quis illum tempore quae error odio! Voluptatum ratione aperiam architecto quae laudantium error labore, veritatis sapiente quos. Dolorem obcaecati nulla aliquid itaque, perspiciatis veniam fuga! Ipsam unde sint amet consequuntur quas vitae ex, distinctio saepe magnam ullam numquam adipisci voluptate, aut nulla sequi ipsa quibusdam hic dolorem ab quos.</p>
+				{!!$study_post[0]->detail!!}
 			</div>
 		</div>
+		@endif
 	</div>
 	<div class="studies-list">
 		<div class="container">

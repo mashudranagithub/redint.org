@@ -11,6 +11,8 @@ use App\Models\Presentation;
 use App\Models\Research;
 use App\Models\Event;
 use App\Models\Member;
+use App\Models\Post;
+use App\Models\Partner;
 
 use Illuminate\Support\Facades\File;
 use DB;
@@ -20,15 +22,25 @@ class UiController extends Controller
 
     public function homepage()
     {
+        $about = Post::orderBy('id', 'desc')->where('type', 'about-organization')->get('detail');
         $researches = Research::orderBy('id', 'desc')->take(10)->get();
         $publications = Publication::orderBy('id', 'DESC')->take(10)->get();
-        $events = Event::orderBy('id', 'DESC')->take(6)->get();
+        $events = Event::orderBy('id', 'DESC')->where('event_status', 'upcoming')->take(6)->get();
+        $partners = Partner::orderBy('id', 'desc')->get();
         $footer_s_areas = StudyAreas::orderBy('id', 'desc')->take(5)->get();
+        $study_post = Post::orderBy('id', 'desc')->where('type', 'studies')->get();
+        $publication_post = Post::orderBy('id', 'desc')->where('type', 'publications')->get();
+        $presentation_post = Post::orderBy('id', 'desc')->where('type', 'presentations')->get();
         return view('ui.index', compact(
             'researches',
             'publications',
             'events',
-            'footer_s_areas'
+            'footer_s_areas',
+            'about',
+            'partners',
+            'study_post',
+            'publication_post',
+            'presentation_post'
         ));
     }
 
@@ -48,22 +60,28 @@ class UiController extends Controller
 
     public function background()
     {
+        $background = Post::orderBy('id', 'desc')->where('type', 'about-organization')->get();
         $researches = Research::orderBy('id', 'desc')->take(10)->get();
         $footer_s_areas = StudyAreas::orderBy('id', 'desc')->take(5)->get();
         return view('ui.background', compact(
             'researches',
-            'footer_s_areas'
+            'footer_s_areas',
+            'background'
         ));
     }
 
 
     public function visionMission()
     {
+        $vision = Post::orderBy('id', 'desc')->where('type', 'vision')->get();
+        $mission = Post::orderBy('id', 'desc')->where('type', 'mission')->get();
         $researches = Research::orderBy('id', 'desc')->take(10)->get();
         $footer_s_areas = StudyAreas::orderBy('id', 'desc')->take(5)->get();
         return view('ui.vision-mission', compact(
             'researches',
-            'footer_s_areas'
+            'footer_s_areas',
+            'vision',
+            'mission'
         ));
     }
 
@@ -112,10 +130,12 @@ class UiController extends Controller
         $researches = Research::orderBy('id', 'desc')->take(10)->get();
         $study_areas = StudyAreas::orderBy('id', 'desc')->get();
         $footer_s_areas = StudyAreas::orderBy('id', 'desc')->take(5)->get();
+        $study_post = Post::orderBy('id', 'desc')->where('type', 'studies')->get();
         return view('ui.study.studies', compact(
             'study_areas',
             'researches',
-            'footer_s_areas'
+            'footer_s_areas',
+            'study_post'
         ));
     }
 
@@ -158,7 +178,7 @@ class UiController extends Controller
     public function publications()
     {
         $researches = Research::orderBy('id', 'desc')->take(10)->get();
-
+        $publication_post = Post::orderBy('id', 'desc')->where('type', 'publications')->get();
         $journals = Publication::orderBy('id', 'DESC')->where('type', '=', 'journal')->paginate(5);
         $books = Publication::orderBy('id', 'DESC')->where('type', '=', 'book')->paginate(5);
         $reports = Publication::orderBy('id', 'DESC')->where('type', '=', 'report')->paginate(5);
@@ -173,7 +193,8 @@ class UiController extends Controller
             'abstracts',
             'newspapers',
             'researches',
-            'footer_s_areas'
+            'footer_s_areas',
+            'publication_post'
         ));
     }
 
@@ -183,10 +204,12 @@ class UiController extends Controller
         $presentations = Presentation::orderBy('id', 'DESC')->paginate(1);
         $researches = Research::orderBy('id', 'desc')->take(10)->get();
         $footer_s_areas = StudyAreas::orderBy('id', 'desc')->take(5)->get();
+        $presentation_post = Post::orderBy('id', 'desc')->where('type', 'presentations')->get();
         return view('ui.presentations', compact(
             'presentations',
             'researches',
-            'footer_s_areas'
+            'footer_s_areas',
+            'presentation_post'
         ));
     }
 
@@ -220,7 +243,32 @@ class UiController extends Controller
     public function events()
     {
         $researches = Research::orderBy('id', 'DESC')->take(10)->get();
-        $events = Event::orderBy('id', 'DESC')->paginate(6);
+        $events = Event::orderBy('id', 'DESC')->where('event_status', 'upcoming')->paginate(6);
+        $footer_s_areas = StudyAreas::orderBy('id', 'desc')->take(5)->get();
+        return view('ui.events.events', compact(
+            'researches',
+            'events',
+            'footer_s_areas'
+        ));
+    }
+
+
+    public function workshops()
+    {
+        $researches = Research::orderBy('id', 'DESC')->take(10)->get();
+        $events = Event::orderBy('id', 'DESC')->where('event_status', 'running')->paginate(6);
+        $footer_s_areas = StudyAreas::orderBy('id', 'desc')->take(5)->get();
+        return view('ui.events.events', compact(
+            'researches',
+            'events',
+            'footer_s_areas'
+        ));
+    }
+
+    public function awards()
+    {
+        $researches = Research::orderBy('id', 'DESC')->take(10)->get();
+        $events = Event::orderBy('id', 'DESC')->where('event_status', 'previous')->paginate(6);
         $footer_s_areas = StudyAreas::orderBy('id', 'desc')->take(5)->get();
         return view('ui.events.events', compact(
             'researches',
@@ -255,6 +303,62 @@ class UiController extends Controller
             'footer_s_areas'
         ));
     }
+
+
+    public function consultancy()
+    {
+        $researches = Research::orderBy('id', 'DESC')->take(10)->get();
+        $footer_s_areas = StudyAreas::orderBy('id', 'desc')->take(5)->get();
+        $post = Post::orderBy('id', 'desc')->where('type', 'consultancy')->get();
+        return view('ui.consultancy', compact(
+            'researches',
+            'footer_s_areas',
+            'post'
+        ));
+    }
+
+
+    public function social()
+    {
+        $researches = Research::orderBy('id', 'DESC')->take(10)->get();
+        $footer_s_areas = StudyAreas::orderBy('id', 'desc')->take(5)->get();
+        $post = Post::orderBy('id', 'desc')->where('type', 'social-services')->get();
+        return view('ui.social', compact(
+            'researches',
+            'footer_s_areas',
+            'post'
+        ));
+    }
+
+
+    public function technical()
+    {
+        $researches = Research::orderBy('id', 'DESC')->take(10)->get();
+        $footer_s_areas = StudyAreas::orderBy('id', 'desc')->take(5)->get();
+        $post = Post::orderBy('id', 'desc')->where('type', 'technical-notes')->get();
+        return view('ui.technical', compact(
+            'researches',
+            'footer_s_areas',
+            'post'
+        ));
+    }
+
+
+    public function networkPartners()
+    {
+        $researches = Research::orderBy('id', 'DESC')->take(10)->get();
+        $footer_s_areas = StudyAreas::orderBy('id', 'desc')->take(5)->get();
+        $partners = Partner::orderBy('id', 'desc')->get();
+        return view('ui.network-partners', compact(
+            'researches',
+            'footer_s_areas',
+            'partners'
+        ));
+    }
+
+
+
+
 
 
 }

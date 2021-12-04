@@ -1,16 +1,27 @@
 @extends('admin.layouts.master')
-
-
 @section('content')
+
+<!-- Content Header (Page header) -->
+<section class="content-header">
+    <div class="pull-left">
+        <ol class="breadcrumb">
+            <li><a href="{{ route('dashboard') }}"><i class="fa fa-dashboard"></i> Dashboard</a></li>
+            <li class="active">Posts</li>
+        </ol>
+    </div>
+    <div class="pull-right">
+        <a class="btn btn-primary" href="{{ route('all-posts') }}"> Back</a>
+    </div>
+</section>
+
+
     <div class="row">
         <div class="col-lg-12 margin-tb">
             <div class="pull-left">
-                <h2>posts</h2>
+                <h2>Posts</h2>
             </div>
             <div class="pull-right">
-                @can('post-create')
-                <a class="btn btn-success" href="{{ route('posts.create') }}"> Create New post</a>
-                @endcan
+                <a class="btn btn-success" href="{{ route('create-post') }}"> Create New post</a>
             </div>
         </div>
     </div>
@@ -26,28 +37,24 @@
     <table class="table table-bordered">
         <tr>
             <th>No</th>
-            <th>Name</th>
-            <th>Details</th>
+            <th>Title</th>
+            <th>Type</th>
             <th width="280px">Action</th>
         </tr>
+        @php $i=0; @endphp
 	    @foreach ($posts as $post)
 	    <tr>
 	        <td>{{ ++$i }}</td>
-	        <td>{{ $post->name }}</td>
-	        <td>{{ $post->detail }}</td>
+	        <td>{{ $post->title }}</td>
+            <td>{{ $post->type }}</td>
 	        <td>
-                <form action="{{ route('posts.destroy',$post->id) }}" method="POST">
-                    <a class="btn btn-info" href="{{ route('posts.show',$post->id) }}">Show</a>
-                    @can('post-edit')
-                    <a class="btn btn-primary" href="{{ route('posts.edit',$post->id) }}">Edit</a>
-                    @endcan
+                <form action="{{ route('delete-post',$post->id) }}" method="POST">
+                    <a class="btn btn-info" href="{{ route('show-post',$post->id) }}">Show</a>
+                    <a class="btn btn-primary" href="{{ route('edit-post',$post->id) }}">Edit</a>
+                    {!! Form::open(['method' => 'DELETE','route' => ['delete-post', $post->id],'style'=>'display:inline']) !!}
+                    {!! Form::submit('Delete', ['class' => 'btn btn-danger']) !!}
+                    {!! Form::close() !!}
 
-
-                    @csrf
-                    @method('DELETE')
-                    @can('post-delete')
-                    <button type="submit" class="btn btn-danger">Delete</button>
-                    @endcan
                 </form>
 	        </td>
 	    </tr>

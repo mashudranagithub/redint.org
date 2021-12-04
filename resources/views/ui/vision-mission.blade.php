@@ -6,12 +6,25 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-6">
-				<h3>Vision</h3>
-				<p>To become a center of excellence for providing services through systematic research, innovation and entrepreneurship development, advisory services, database development, information and communication technology and training to the extensive group of national and international organizations for purposes of enhanced effectiveness and efficiency in planning, management, implementation and monitoring of projects, programs and entrepreneurship development.</p>
+				<h3>{{ $vision[0]->title }}</h3>
+				<br>
+				<div class="red-text-image">
+					@if($vision[0]->image)
+					<img src="{{ asset('ui/assets/images/post/'.$vision[0]->type.'/'.$vision[0]->image) }}" alt="RED Vision Image">
+					@endif
+					<p>{!! $vision[0]->detail !!}</p>
+				</div>
 			</div>
 			<div class="col-md-6">
-				<h3>Mission</h3>
-				<p>To provide services for identifying challenges and solutions through research, entrepreneurship and skill development for sustainable livelihood, socioeconomic, natural resources, environment and health using situation analysis, baseline, end line and impact evaluation, information technology at home and abroad.</p>
+				<h3>{{ $mission[0]->title }}</h3>
+				<br>
+				<div class="red-text-image">
+					@if($mission[0]->image)
+					<img src="{{ asset('ui/assets/images/post/'.$mission[0]->type.'/'.$mission[0]->image) }}" alt="RED Vision Image">
+					@endif
+					<p>{!! $mission[0]->detail !!}</p>
+				</div>
+
 			</div>
 		</div>
 	</div>

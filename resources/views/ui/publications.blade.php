@@ -6,7 +6,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-12">
-				<h2>Publications</h2>
+				<h2>@if(isset($publication_post[0])) {{$publication_post[0]->title}} @else Publications @endif</h2>
 			</div>
 		</div>
 	</div>
@@ -14,6 +14,13 @@
 
 <section id="Page-content" class="white">
 	<div class="container">
+		@if(isset($publication_post[0]))
+		<div class="row mb-4">
+			<div class="col-md-12 mb-4">
+				{!!$publication_post[0]->detail!!}
+			</div>
+		</div>
+		@endif
 		<div class="row">
 			<div class="col-md-4">
 				<div class="sidebar-centre-link">

@@ -6,7 +6,17 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-12">
-				<h2>Events</h2>
+				@if(isset($events[0]))
+					@if($events[0]->event_status=="running")
+					<h2>Workshop/Seminar</h2>
+					@elseif($events[0]->event_status=="upcoming")
+					<h2>Events</h2>
+					@else
+					<h2>Awards</h2>
+					@endif
+				@else
+				<h2>No Data Found!</h2>
+				@endif
 			</div>
 		</div>
 	</div>

@@ -17,8 +17,7 @@ class MemberController extends Controller
      */
     public function index()
     {
-        $members = DB::table('members')->orderBy('id')->get();
-
+        $members = DB::table('members')->orderBy('id', 'desc')->get();
         return view('admin.members.index', compact(
             'members',
         ));

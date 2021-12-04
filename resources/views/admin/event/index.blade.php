@@ -42,6 +42,7 @@
 						<th>Event Title</th>
 						<th>Date</th>
 						<th>Place</th>
+						<th>Event Type</th>
 						<th>Action</th>
 					</tr>
 				</thead>
@@ -51,6 +52,18 @@
 						<td width="320px">{{ $event->event_title }}</td>
 						<td width="150px">{{ $event->event_date }}</td>
 						<td width="250px">{{ $event->event_place }}</td>
+
+						<td width="250px">
+							@if($event->event_status=="running")
+							<h5>Workshop/Seminar</h5>
+							@elseif($event->event_status=="upcoming")
+							<h5>News & Events</h5>
+							@else
+							<h5>Awards</h5>
+							@endif
+						</td>
+
+
 						<td>
 					         <a class="btn btn-primary" href="{{ route('showEvent', $event->id) }}">Show</a>
 					         <a class="btn btn-primary" href="{{ route('editEvent', $event->id) }}">Edit</a>

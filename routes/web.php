@@ -11,6 +11,8 @@ use App\Http\Controllers\PresentationController;
 use App\Http\Controllers\ResearchController;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\MemberController;
+use App\Http\Controllers\PostController;
+use App\Http\Controllers\PartnerController;
 use Illuminate\Http\Request;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
 
@@ -34,6 +36,7 @@ Route::get('/', [UiController::class, 'homepage'])->name('homepage');
 Route::get('/gallery', [UiController::class, 'gallery'])->name('gallery');
 Route::get('/background', [UiController::class, 'background'])->name('background');
 Route::get('/vision-mission', [UiController::class, 'visionMission'])->name('visionMission');
+Route::get('/network-partners', [UiController::class, 'networkPartners'])->name('networkPartners');
 
 Route::get('/professionals', [UiController::class, 'professionals'])->name('professionals');
 Route::get('/advisors', [UiController::class, 'advisors'])->name('advisors');
@@ -41,12 +44,20 @@ Route::get('/management', [UiController::class, 'management'])->name('management
 
 Route::get('/publications', [UiController::class, 'publications'])->name('publications');
 Route::get('/presentations', [UiController::class, 'presentations'])->name('presentations');
+
+Route::get('/consultancy', [UiController::class, 'consultancy'])->name('consultancy');
+Route::get('/social', [UiController::class, 'social'])->name('social');
+Route::get('/technical', [UiController::class, 'technical'])->name('technical');
+
 Route::get('/contact', [UiController::class, 'contact'])->name('contact');
 
 Route::get('/researches', [UiController::class, 'researches'])->name('researches');
 Route::get('/single-research/{id}', [UiController::class, 'single_research'])->name('single-research');
 
 Route::get('/events', [UiController::class, 'events'])->name('events');
+Route::get('/workshops', [UiController::class, 'workshops'])->name('workshops');
+Route::get('/awards', [UiController::class, 'awards'])->name('awards');
+
 Route::get('/single-event/{id}', [UiController::class, 'single_event'])->name('single-event');
 
 Route::get('/studies', [UiController::class, 'studies'])->name('studies');
@@ -155,6 +166,25 @@ Route::group(['middleware' => ['auth', 'verified']], function() {
 	Route::get('member/edit/{id}', [MemberController::class, 'edit'])->name('edit-member');
 	Route::put('member/update/{id}', [MemberController::class, 'update'])->name('update-member');
 	Route::delete('member/delete/{id}', [MemberController::class, 'destroy'])->name('delete-member');
+
+
+	// Posts Routes Start Here
+	Route::get('all-posts', [PostController::class, 'index'])->name('all-posts');
+	Route::get('post/create', [PostController::class, 'create'])->name('create-post');
+	Route::post('post/create', [PostController::class, 'store'])->name('store-post');
+	Route::get('post/show/{id}', [PostController::class, 'show'])->name('show-post');
+	Route::get('post/edit/{id}', [PostController::class, 'edit'])->name('edit-post');
+	Route::put('post/update/{id}', [PostController::class, 'update'])->name('update-post');
+	Route::delete('post/delete/{id}', [PostController::class, 'destroy'])->name('delete-post');
+
+
+	// Partners Routes Start Here
+	Route::get('all-partners', [PartnerController::class, 'index'])->name('all-partners');
+	Route::get('partner/create', [PartnerController::class, 'create'])->name('create-partner');
+	Route::post('partner/create', [PartnerController::class, 'store'])->name('store-partner');
+	Route::get('partner/edit/{id}', [PartnerController::class, 'edit'])->name('edit-partner');
+	Route::put('partner/update/{id}', [PartnerController::class, 'update'])->name('update-partner');
+	Route::delete('partner/delete/{id}', [PartnerController::class, 'destroy'])->name('delete-partner');
 
 
 });
