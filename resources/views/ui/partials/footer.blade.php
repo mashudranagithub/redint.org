@@ -9,19 +9,19 @@
                             <ul class="footer-contacts">
                                 <li>
                                     <i class="far fa-clock"></i>
-                                    <span> Sun - Thu 9:00 a.m. - 5:00 p.m. <br> Friday and Saturday Closed</span>
+                                    <span>{{$settings->office_time}}</span>
                                 </li>
                                 <li>
                                     <i class="fas fa-map-marker"></i>
-                                    <span> 21/5 Pallabi, Dhaka 1216 </span>
+                                    <span>{{$settings->address}}</span>
                                 </li>
                                 <li>
                                     <i class="fas fa-envelope"></i>
-                                    <span>E-mail: redltd3@gmail.com</span>
+                                    <span>E-mail: {{$settings->email}}</span>
                                 </li>
                                 <li>
                                     <i class="fas fa-phone"></i>
-                                    <span>Mobile: +8801782 - 070254</span>
+                                    <span>Mobile: {{$settings->mobile}}</span>
                                 </li>
                             </ul>
                         </div>
@@ -55,7 +55,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-6 text-left">
-                        <p class="copyright-text">© 2020, All rights reserved <a href="#">RED Ltd.</a></p>
+                        <p class="copyright-text">© 2020, All rights reserved <a href="{{route('homepage')}}">RED Ltd.</a></p>
                     </div>
                     <div class="col-md-6 text-right">
                         <p class="developed-by">Developed by <a href="http://www.mashudrana.com" target="_blank">Mashud Rana</a></p>

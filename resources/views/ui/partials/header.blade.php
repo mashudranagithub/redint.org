@@ -34,27 +34,27 @@
 							<div class="top-social-menu">
 								<ul>
 									<li>
-										<a target="_blank" href="javascript:void(0);">
+										<a target="_blank" href="{{$settings->facebook}}">
 											<i class="fab fa-facebook-f"></i>
 										</a>
 									</li>
 									<li>
-										<a href="javascript:void(0);">
+										<a target="_blank" href="{{$settings->facebook}}">
 											<i class="fab fa-twitter"></i>
 										</a>
 									</li>
 									<li>
-										<a href="javascript:void(0);">
+										<a target="_blank" href="{{$settings->facebook}}">
 											<i class="fab fa-linkedin"></i>
 										</a>
 									</li>
 									<li>
-										<a href="javascript:void(0);">
+										<a target="_blank" href="{{$settings->facebook}}">
 											<i class="fab fa-instagram"></i>
 										</a>
 									</li>
 									<li>
-										<a href="javascript:void(0);">
+										<a target="_blank" href="{{$settings->facebook}}">
 											<i class="fab fa-youtube"></i>
 										</a>
 									</li>
@@ -70,7 +70,9 @@
 					<div class="row d-flex align-items-center">
 						<div class="col-md-3">
 							<div class="logo">
-								<a href="{{ route('homepage') }}"><img src="{{ asset('ui/assets/img/logo/logo.png') }}" alt="Logo Image"></a>
+								<a href="{{ route('homepage') }}">
+									<img src="{{ asset('ui/assets/images/settings/'.$settings->logo) }}" alt="Logo Image">
+								</a>
 							</div>
 						</div>
 						<div class="col-md-9">

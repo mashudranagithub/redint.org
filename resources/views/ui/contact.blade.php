@@ -28,19 +28,19 @@
                     <ul class="footer-contacts">
                         <li>
                             <i class="far fa-clock"></i>
-                            <span> Sun - Thu 9:00 a.m. - 5:00 p.m. <br> Friday and Saturday Closed</span>
+                            <span>{{$settings->office_time}}</span>
                         </li>
                         <li>
                             <i class="fas fa-map-marker"></i>
-                            <span> 21/5 Pallabi, Dhaka 1216 </span>
+                            <span>{{$settings->address}}</span>
                         </li>
                         <li>
                             <i class="fas fa-envelope"></i>
-                            <span>E-mail: redltd3@gmail.com</span>
+                            <span>E-mail: {{$settings->email}}</span>
                         </li>
                         <li>
                             <i class="fas fa-phone"></i>
-                            <span>Mobile: +8801782 - 070254</span>
+                            <span>Mobile: {{$settings->mobile}}</span>
                         </li>
                     </ul>
                 </div>

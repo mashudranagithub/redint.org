@@ -13,6 +13,7 @@ use App\Http\Controllers\EventController;
 use App\Http\Controllers\MemberController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\PartnerController;
+use App\Http\Controllers\SettingsController;
 use Illuminate\Http\Request;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
 
@@ -185,6 +186,11 @@ Route::group(['middleware' => ['auth', 'verified']], function() {
 	Route::get('partner/edit/{id}', [PartnerController::class, 'edit'])->name('edit-partner');
 	Route::put('partner/update/{id}', [PartnerController::class, 'update'])->name('update-partner');
 	Route::delete('partner/delete/{id}', [PartnerController::class, 'destroy'])->name('delete-partner');
+
+
+	// Settings Routes Start Here
+	Route::get('settings', [SettingsController::class, 'edit'])->name('settings');
+	Route::put('settings/update', [SettingsController::class, 'update'])->name('update-settings');
 
 
 });
